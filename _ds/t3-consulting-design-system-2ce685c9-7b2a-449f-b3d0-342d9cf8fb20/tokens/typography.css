@@ -1,0 +1,23 @@
+:root{
+--font-display:'Archivo','Arial',sans-serif;--font-body:'Inter','Calibri','Arial',sans-serif;--font-mono:'IBM Plex Mono','Consolas',monospace;
+/* Scale — Brand Board p.19 */
+--type-display-size:44px;--type-display-lh:52px;--type-display-weight:800;
+--type-h1-size:32px;--type-h1-lh:40px;--type-h1-weight:800;
+--type-h2-size:24px;--type-h2-lh:32px;--type-h2-weight:700;
+--type-h3-size:18px;--type-h3-lh:26px;--type-h3-weight:700;
+--type-body-size:16px;--type-body-lh:26px;--type-body-weight:400;
+--type-caption-size:14px;--type-caption-lh:22px;--type-caption-weight:300;
+--type-label-size:12px;--type-label-lh:16px;--type-label-weight:600;--type-label-tracking:.18em;
+--type-data-size:14px;--type-data-lh:20px;
+/* Marketing hero scale */
+--type-hero-size:72px;--type-hero-lh:76px;
+--tracking-tight:-.01em;
+}
+body{font-family:var(--font-body);color:var(--text-body);-webkit-font-smoothing:antialiased}
+.t3-display{font:var(--type-display-weight) var(--type-display-size)/var(--type-display-lh) var(--font-display);letter-spacing:var(--tracking-tight);color:var(--text-heading)}
+.t3-h1{font:var(--type-h1-weight) var(--type-h1-size)/var(--type-h1-lh) var(--font-display);color:var(--text-heading)}
+.t3-h2{font:var(--type-h2-weight) var(--type-h2-size)/var(--type-h2-lh) var(--font-display);color:var(--text-heading)}
+.t3-body{font:var(--type-body-weight) var(--type-body-size)/var(--type-body-lh) var(--font-body)}
+.t3-caption{font:var(--type-caption-weight) var(--type-caption-size)/var(--type-caption-lh) var(--font-body)}
+.t3-label{font:var(--type-label-weight) var(--type-label-size)/var(--type-label-lh) var(--font-display);letter-spacing:var(--type-label-tracking);text-transform:uppercase}
+.t3-data{font:500 var(--type-data-size)/var(--type-data-lh) var(--font-mono)}

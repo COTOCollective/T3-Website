@@ -1,0 +1,73 @@
+# =========================================================
+# T3 Website — .gitignore
+# =========================================================
+
+# ---------- Archivos de trabajo de diseño (no los usa el sitio) ----------
+uploads/
+screenshots/
+Framer export/
+.design-canvas.state.json
+.thumbnail
+
+# ---------- Dependencias ----------
+node_modules/
+jspm_packages/
+bower_components/
+
+# ---------- Builds y caché ----------
+dist/
+build/
+out/
+.cache/
+.parcel-cache/
+.vite/
+.next/
+.nuxt/
+.vercel/
+.netlify/
+*.tsbuildinfo
+
+# ---------- Variables de entorno y secretos ----------
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# ---------- Logs ----------
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ---------- Tests / cobertura ----------
+coverage/
+.nyc_output/
+
+# ---------- Editores / IDE ----------
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+.idea/
+*.sublime-workspace
+*.swp
+*.swo
+
+# ---------- Claude Code (config local de cada persona) ----------
+.claude/settings.local.json
+
+# ---------- Sistema operativo ----------
+.DS_Store
+._*
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# ---------- Temporales ----------
+*.tmp
+*.temp
+*.bak
+~$*

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><base href="../"><meta name="viewport" content="width=device-width,initial-scale=1"><title>About T3 — Hero options</title>
+<link rel="stylesheet" href="_ds/t3-consulting-design-system-2ce685c9-7b2a-449f-b3d0-342d9cf8fb20/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/t3-consulting-design-system-2ce685c9-7b2a-449f-b3d0-342d9cf8fb20/tokens/colors.css">
+<link rel="stylesheet" href="_ds/t3-consulting-design-system-2ce685c9-7b2a-449f-b3d0-342d9cf8fb20/tokens/typography.css">
+<link rel="stylesheet" href="_ds/t3-consulting-design-system-2ce685c9-7b2a-449f-b3d0-342d9cf8fb20/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/t3-consulting-design-system-2ce685c9-7b2a-449f-b3d0-342d9cf8fb20/styles.css">
+<link rel="stylesheet" href="src/de.css">
+<style>a{color:var(--text-link)}a:hover{color:var(--t3-navy)}.v6-more-dot{flex:none}
+@container (max-width:1279px){.abh-split{grid-template-columns:minmax(0,1fr)!important;gap:32px!important}.abh-photo{height:380px!important}.abh-wide{height:380px!important}.abh-strip>*{height:180px!important}}
+@container (max-width:809px){.abh-photo{height:220px!important}.abh-wide{height:220px!important}.abh-strip{gap:8px!important;grid-template-columns:repeat(3,minmax(0,1fr))!important}.abh-strip>*{height:110px!important}.abh-full{min-height:680px!important}.abh-frost{padding:24px!important;gap:16px!important}.abh-frost h1{font-size:34px!important;line-height:40px!important}}</style>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="_ds/t3-consulting-design-system-2ce685c9-7b2a-449f-b3d0-342d9cf8fb20/_ds_bundle.js"></script>
+<script>window.DE_STATIC=true;</script>
+</head><body>
+<div id="root"></div>
+<script type="text/babel" src="src/design-canvas.jsx"></script>
+<script type="text/babel" src="src/de-shared.jsx"></script>
+<script type="text/babel" src="src/de-v6.jsx"></script>
+<script type="text/babel" src="src/about.jsx"></script>
+<script type="text/babel" src="src/about-heroes.jsx"></script>
+<script type="text/babel">
+function Measure({onH,children}){const ref=React.useRef(null);React.useEffect(()=>{const el=ref.current;const ro=new ResizeObserver(()=>onH(Math.ceil(el.offsetHeight)));ro.observe(el);return()=>ro.disconnect();},[]);return <div ref={ref}>{children}</div>;}
+function App(){const [h,setH]=React.useState({});
+  return <DesignCanvas>{AB_HEROES.map(([id,l,C])=><DCSection key={id} id={id} title={l} subtitle="Desktop 1440 · Tablet 834 · Phone 390">
+    {[['d','Desktop',1440],['t','Tablet',834],['p','Phone',390]].map(([k,T,W])=>{const aid=id+k;return <DCArtboard key={aid} id={aid} label={l+' — '+T} width={W} height={h[aid]||900}><Measure onH={v=>setH(q=>q[aid]===v?q:{...q,[aid]:v})}><div className="de-page"><SiteHeader tone={id==='h4'?'light':'navy'} active={2}/><C/></div></Measure></DCArtboard>;})}
+  </DCSection>)}</DesignCanvas>;}
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script>
+</body></html>

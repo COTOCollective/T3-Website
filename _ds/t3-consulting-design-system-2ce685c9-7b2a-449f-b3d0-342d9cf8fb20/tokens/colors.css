@@ -1,0 +1,28 @@
+:root{
+/* Core palette — Brand Board p.05 */
+--t3-navy:#0C2834;--t3-steel:#37627C;--t3-turquoise:#37C6C0;--t3-green:#D0D407;--t3-mist:#F8FCFD;--t3-white:#FFFFFF;
+/* Navy ramp (deep surfaces, glows) */
+--t3-navy-900:#081D26;--t3-navy-800:#0C2834;--t3-navy-700:#12384A;--t3-navy-600:#1A4A5E;--t3-navy-500:#245C72;
+/* Turquoise tints — UI states & fills */
+--t3-turq-100:#DDF5F4;--t3-turq-200:#B9ECEA;--t3-turq-300:#8FE0DC;--t3-turq-400:#62D3CE;--t3-turq-500:#37C6C0;--t3-turq-600:#2AA7A2;--t3-turq-700:#1F8682;
+/* Steel / neutral ramp */
+--t3-steel-50:#EEF4F7;--t3-steel-100:#DCE7ED;--t3-steel-200:#B9CCD7;--t3-steel-300:#8AA6B7;--t3-steel-500:#37627C;--t3-steel-700:#264759;
+--t3-green-100:#F6F7CD;--t3-green-500:#D0D407;--t3-green-700:#8C8F05;
+--t3-danger:#C8513F;--t3-danger-100:#F8E3DF;--t3-warning:#D9A23A;--t3-warning-100:#F8EED9;
+
+/* Semantic — light surfaces */
+--bg-page:var(--t3-white);--bg-subtle:var(--t3-white);/* Mist is never a background */--surface-card:var(--t3-white);--surface-raised:var(--t3-white);--surface-inverse:var(--t3-navy);
+--fg-1:var(--t3-navy);--fg-2:var(--t3-steel);--fg-3:var(--t3-steel-300);--fg-on-inverse:var(--t3-white);--fg-on-inverse-2:#B7C9D2;--fg-on-accent:var(--t3-navy);
+--text-heading:var(--fg-1);--text-body:var(--fg-2);--text-muted:var(--fg-3);--text-link:var(--t3-turq-700);
+--accent:var(--t3-turquoise);--accent-hover:var(--t3-turq-600);--accent-press:var(--t3-turq-700);--accent-soft:var(--t3-turq-100);--button-bg:var(--t3-green);--button-bg-hover:#BCC006;--button-bg-press:#A8AB05;--accent-support:var(--t3-green);
+--border-hairline:#E3ECF0;--border-default:var(--t3-steel-100);--border-strong:var(--t3-steel-200);--border-accent:var(--t3-turq-300);--border-on-inverse:rgba(255,255,255,.22);
+--focus-ring:0 0 0 3px rgba(55,198,192,.35);
+
+/* Dark / frosted surfaces */
+--surface-frost:rgba(12,40,52,.62);--surface-frost-strong:rgba(12,40,52,.82);--surface-frost-border:rgba(255,255,255,.14);
+--glow-turquoise:radial-gradient(60% 70% at 70% 30%,rgba(55,198,192,.22) 0%,rgba(55,198,192,0) 70%);/* @kind color */
+--gradient-navy:linear-gradient(160deg,#12384A 0%,#0C2834 55%,#081D26 100%);/* @kind color */
+--gradient-fade:linear-gradient(90deg,var(--t3-navy) 0%,var(--t3-turquoise) 100%);/* @kind color */
+--photo-scrim:linear-gradient(180deg,rgba(12,40,52,0) 40%,rgba(12,40,52,.78) 100%);/* @kind color */
+}
+a{color:var(--text-link)}a:hover{color:var(--t3-navy)}

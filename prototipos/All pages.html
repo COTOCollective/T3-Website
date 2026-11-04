@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><base href="../"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Delivery Engineering | T3 Consulting — 5 layouts</title>
+<link rel="stylesheet" href="_ds/t3-consulting-design-system-2ce685c9-7b2a-449f-b3d0-342d9cf8fb20/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/t3-consulting-design-system-2ce685c9-7b2a-449f-b3d0-342d9cf8fb20/tokens/colors.css">
+<link rel="stylesheet" href="_ds/t3-consulting-design-system-2ce685c9-7b2a-449f-b3d0-342d9cf8fb20/tokens/typography.css">
+<link rel="stylesheet" href="_ds/t3-consulting-design-system-2ce685c9-7b2a-449f-b3d0-342d9cf8fb20/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/t3-consulting-design-system-2ce685c9-7b2a-449f-b3d0-342d9cf8fb20/styles.css">
+<link rel="stylesheet" href="src/de.css">
+<style>a{color:var(--text-link)}a:hover{color:var(--t3-navy)}.v6-more-dot{flex:none}</style>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="_ds/t3-consulting-design-system-2ce685c9-7b2a-449f-b3d0-342d9cf8fb20/_ds_bundle.js"></script>
+<script>window.DE_STATIC=true;</script>
+</head><body>
+<div id="root"></div>
+<script type="text/babel" src="src/tweaks-panel.jsx"></script>
+<script type="text/babel" src="src/design-canvas.jsx"></script>
+<script type="text/babel" src="src/de-shared.jsx"></script>
+<script type="text/babel" src="src/de-v1.jsx"></script>
+<script type="text/babel" src="src/de-v2.jsx"></script>
+<script type="text/babel" src="src/de-v3.jsx"></script>
+<script type="text/babel" src="src/de-v4.jsx"></script>
+<script type="text/babel" src="src/de-v5.jsx"></script>
+<script type="text/babel" src="src/de-v6.jsx"></script>
+<script type="text/babel" src="src/env-v1.jsx"></script>
+<script type="text/babel" src="src/env-v2.jsx"></script>
+<script type="text/babel" src="src/env-v3.jsx"></script>
+<script type="text/babel" src="src/dist-shared.jsx"></script>
+<script type="text/babel" src="src/dist-v1.jsx"></script>
+<script type="text/babel" src="src/dist-v2.jsx"></script>
+<script type="text/babel" src="src/dist-v3.jsx"></script>
+<script type="text/babel" src="src/dist-v4.jsx"></script>
+<script type="text/babel" src="src/home-shared.jsx"></script>
+<script type="text/babel" src="src/home-a.jsx"></script>
+<script type="text/babel" src="src/home-heroes.jsx"></script>
+<script type="text/babel" src="src/home-b.jsx"></script>
+<script type="text/babel" src="src/home-c.jsx"></script>
+<script type="text/babel" src="src/home-d.jsx"></script>
+<script type="text/babel" src="src/home-ecd.jsx"></script>
+<script type="text/babel" src="src/home-proof.jsx"></script>
+<script type="text/babel" src="src/contact.jsx"></script>
+<script type="text/babel" src="src/about.jsx"></script>
+<script type="text/babel" src="src/about-heroes.jsx"></script>
+<script type="text/babel">
+const VERS=[['v1','01 · Enterprise — navy hero, spec panel, card grid',V1],['v2','02 · Editorial index — sticky contents, accordion services',V2],['v3','03 · Immersive field — full-bleed photo, frosted layers, service rail',V3],['v4','04 · Spec sheet — bento tiles, voltage scale, data table',V4],['v5','05 · Conversion-led — hero form, ECD stage stepper, tabs',V5]];
+const HOMES=[['hA','A · Orbit — flat navy field, 3D ring system, tilt cards',HomeA]];
+function Measure({onH,children}){
+  const ref=React.useRef(null);
+  React.useEffect(()=>{const el=ref.current;const ro=new ResizeObserver(()=>onH(Math.ceil(el.offsetHeight)));ro.observe(el);return()=>ro.disconnect();},[]);
+  return <div ref={ref}>{children}</div>;
+}
+const TWEAK_DEFAULTS=/*EDITMODE-BEGIN*/{
+  "green": "#D0D407",
+  "showRef": false,
+  "heroVis": "spec"
+}/*EDITMODE-END*/;
+const darken=(hex,f)=>'#'+[1,3,5].map(i=>Math.round(parseInt(hex.slice(i,i+2),16)*f).toString(16).padStart(2,'0')).join('');
+function App(){
+  const [h,setH]=React.useState({});
+  const [t,setTweak]=useTweaks(TWEAK_DEFAULTS);
+  React.useEffect(()=>{const r=document.documentElement.style;r.setProperty('--t3-green',t.green);r.setProperty('--button-bg',t.green);r.setProperty('--button-bg-hover',darken(t.green,.9));r.setProperty('--button-bg-press',darken(t.green,.8));},[t.green]);
+  return <><TweaksPanel><TweakSection label="Brand"/><TweakColor label="Green" value={t.green} options={['#DFCD02','#D0D407','#B8E04A','#37C6C0']} onChange={v=>setTweak('green',v)}/><TweakSection label="Option 2 hero"/><TweakSelect label="Hero visual" value={t.heroVis} options={[{value:'collage',label:'Photo collage'},{value:'spec',label:'Photo + frosted spec bar'},{value:'strips',label:'Staggered strips'},{value:'inset',label:'Photo + inset'}]} onChange={v=>setTweak('heroVis',v)}/><TweakSection label="Canvas"/><TweakToggle label="Show reference" value={t.showRef} onChange={v=>setTweak('showRef',v)}/></TweaksPanel><DesignCanvas>
+    {t.showRef&&<DCSection id="ref" title="Reference"><DCArtboard id="hRef" label="Reference — screenshot" width={728} height={3528}><img src="assets/home-reference.png" alt="Homepage reference screenshot" style={{display:'block',width:'100%',height:'auto'}}></img></DCArtboard></DCSection>}
+    {[['home','Home','hA',HomeA],['de','Delivery Engineering','v1',V1],['env','Environmental','env1',EnvPage],['dist','Distribution Engineering','dist1',DistV1],['about','About','ab1',AboutPage],['ct','Contact','ct1',ContactA]].map(([p,l,did,C])=><DCSection key={p} id={'pg-'+p} title={l} subtitle="Desktop 1440px · Tablet 834px · Phone 390px">
+      {[[did,'Desktop',1440],['tab-'+p,'Tablet',834],['ph-'+p,'Phone',390]].map(([id,T,W])=><DCArtboard key={id} id={id} label={l+' — '+T} width={W} height={h[id]||(W>1000?6000:8000)}><Measure onH={v=>setH(q=>q[id]===v?q:{...q,[id]:v})}>{p==='de'?<C heroVis={t.heroVis}/>:<C/>}</Measure></DCArtboard>)}
+    </DCSection>)}
+  </DesignCanvas></>;
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script>
+</body></html>

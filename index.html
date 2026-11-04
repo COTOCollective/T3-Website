@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>T3 Consulting</title>
+<link rel="icon" href="assets/t3-mark-color.png">
+<link rel="stylesheet" href="_ds/t3-consulting-design-system-2ce685c9-7b2a-449f-b3d0-342d9cf8fb20/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/t3-consulting-design-system-2ce685c9-7b2a-449f-b3d0-342d9cf8fb20/tokens/colors.css">
+<link rel="stylesheet" href="_ds/t3-consulting-design-system-2ce685c9-7b2a-449f-b3d0-342d9cf8fb20/tokens/typography.css">
+<link rel="stylesheet" href="_ds/t3-consulting-design-system-2ce685c9-7b2a-449f-b3d0-342d9cf8fb20/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/t3-consulting-design-system-2ce685c9-7b2a-449f-b3d0-342d9cf8fb20/styles.css">
+<link rel="stylesheet" href="src/de.css">
+<style>
+a{color:var(--text-link)}a:hover{color:var(--t3-navy)}.v6-more-dot{flex:none}
+.hm-pillar[data-route],.v6-card[data-route]{cursor:pointer}
+</style>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="_ds/t3-consulting-design-system-2ce685c9-7b2a-449f-b3d0-342d9cf8fb20/_ds_bundle.js"></script>
+</head>
+<body>
+<div id="root"></div>
+
+<!-- Componentes compartidos -->
+<script type="text/babel" src="src/de-shared.jsx"></script>
+<script type="text/babel" src="src/de-v1.jsx"></script>
+<script type="text/babel" src="src/de-v6.jsx"></script>
+<script type="text/babel" src="src/dist-shared.jsx"></script>
+<script type="text/babel" src="src/home-shared.jsx"></script>
+<script type="text/babel" src="src/home-heroes.jsx"></script>
+<script type="text/babel" src="src/home-c.jsx"></script>
+<script type="text/babel" src="src/home-d.jsx"></script>
+<script type="text/babel" src="src/home-ecd.jsx"></script>
+<script type="text/babel" src="src/home-proof.jsx"></script>
+
+<!-- Páginas -->
+<script type="text/babel" src="src/home-a.jsx"></script>      <!-- Home -->
+<script type="text/babel" src="src/env-v1.jsx"></script>      <!-- Environmental -->
+<script type="text/babel" src="src/dist-v1.jsx"></script>     <!-- Distribution Engineering -->
+<script type="text/babel" src="src/about-heroes.jsx"></script>
+<script type="text/babel" src="src/about.jsx"></script>       <!-- About -->
+<script type="text/babel" src="src/contact.jsx"></script>     <!-- Contact -->
+
+<script type="text/babel">
+// Rutas del sitio: #home, #delivery, #environmental, #distribution, #about, #contact
+const PAGES = {
+  home:         { title: 'T3 Consulting',                          C: HomeA },
+  delivery:     { title: 'Delivery Engineering | T3 Consulting',     C: V1 },
+  environmental:{ title: 'Environmental | T3 Consulting',            C: EnvPage },
+  distribution: { title: 'Distribution Engineering | T3 Consulting', C: DistV1 },
+  about:        { title: 'About | T3 Consulting',                    C: AboutPage },
+  contact:      { title: 'Contact | T3 Consulting',                  C: ContactA },
+};
+const currentRoute = () => { const k = location.hash.slice(1); return PAGES[k] ? k : 'home'; };
+const go = r => { if (location.hash.slice(1) === r) window.scrollTo(0, 0); else location.hash = r; };
+
+// Botones de llamada a la acción → Contact
+const CTA_TEXT = [DE.cta, DE.capCta, HM.cta];
+
+// Conecta botones y tarjetas del diseño (que no tienen href) con las páginas.
+document.addEventListener('click', e => {
+  const btn = e.target.closest('button, a');
+  if (btn && !btn.closest('form') && CTA_TEXT.some(t => btn.textContent.trim() === t)) { e.preventDefault(); go('contact'); return; }
+  const card = e.target.closest('[data-route]');
+  if (card) { e.preventDefault(); go(card.dataset.route); }
+});
+
+// Marca como enlazables las tarjetas cuyo título corresponde a una página (pilares del Home, "Related", etc.)
+function tagCards() {
+  document.querySelectorAll('.hm-pillar, .v6-card').forEach(el => {
+    const h = el.querySelector('h3'); const r = h && ROUTES[h.textContent.trim()];
+    if (r) el.dataset.route = r;
+  });
+}
+
+function Site() {
+  const [route, setRoute] = React.useState(currentRoute);
+  React.useEffect(() => {
+    const f = () => { setRoute(currentRoute()); window.scrollTo(0, 0); };
+    window.addEventListener('hashchange', f);
+    return () => window.removeEventListener('hashchange', f);
+  }, []);
+  React.useEffect(() => { document.title = PAGES[route].title; tagCards(); }, [route]);
+  const { C } = PAGES[route];
+  return <C key={route} />;
+}
+
+window.DE_STATIC = false;
+ReactDOM.createRoot(document.getElementById('root')).render(<Site />);
+</script>
+</body>
+</html>
