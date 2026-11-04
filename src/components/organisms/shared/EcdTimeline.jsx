@@ -1,3 +1,13 @@
+/** Descarga el white paper desde assets/. */
+const downloadWhitePaper = () => {
+  const link = document.createElement('a');
+  link.href = WHITEPAPER;
+  link.download = WHITEPAPER_NAME;
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+};
+
 /**
  * Organismo: sección azul marino de Environmentally Conscious Design como línea de tiempo.
  * @param {object} props
@@ -21,7 +31,7 @@ const EcdTimeline = ({ title, labels, paragraphs, link, whitePaper, compact }) =
       </div>
       <div className="de-row" style={{ gap: 24, flexWrap: 'wrap' }}>
         <MoreLink onDark>{link}</MoreLink>
-        <Button variant="secondary" onDark iconRight="download" style={{ height: 48 }}>{whitePaper}</Button>
+        <Button variant="secondary" onDark iconRight="download" style={{ height: 48 }} onClick={downloadWhitePaper}>{whitePaper}</Button>
       </div>
     </Container>
   </section>
