@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="_ds/t3-consulting-design-system-2ce685c9-7b2a-449f-b3d0-342d9cf8fb20/tokens/typography.css">
 <link rel="stylesheet" href="_ds/t3-consulting-design-system-2ce685c9-7b2a-449f-b3d0-342d9cf8fb20/tokens/spacing.css">
 <link rel="stylesheet" href="_ds/t3-consulting-design-system-2ce685c9-7b2a-449f-b3d0-342d9cf8fb20/styles.css">
-<link rel="stylesheet" href="src/de.css">
+<link rel="stylesheet" href="src/styles/site.css">
 <style>
 a{color:var(--text-link)}a:hover{color:var(--t3-navy)}.v6-more-dot{flex:none}
 .hm-pillar[data-route],.v6-card[data-route]{cursor:pointer}
@@ -23,72 +23,116 @@ a{color:var(--text-link)}a:hover{color:var(--t3-navy)}.v6-more-dot{flex:none}
 <body>
 <div id="root"></div>
 
-<!-- Componentes compartidos -->
-<script type="text/babel" src="src/de-shared.jsx"></script>
-<script type="text/babel" src="src/de-v1.jsx"></script>
-<script type="text/babel" src="src/de-v6.jsx"></script>
-<script type="text/babel" src="src/dist-shared.jsx"></script>
-<script type="text/babel" src="src/home-shared.jsx"></script>
-<script type="text/babel" src="src/home-heroes.jsx"></script>
-<script type="text/babel" src="src/home-c.jsx"></script>
-<script type="text/babel" src="src/home-d.jsx"></script>
-<script type="text/babel" src="src/home-ecd.jsx"></script>
-<script type="text/babel" src="src/home-proof.jsx"></script>
+<!-- Utilidades y hooks (JavaScript sin JSX) -->
+<script src="src/utils/design-system.js"></script>
+<script src="src/utils/routes.js"></script>
+<script src="src/utils/assets.js"></script>
+<script src="src/utils/styles.js"></script>
+<script src="src/utils/effects.js"></script>
+<script src="src/hooks/useCloseOnOutsideClick.js"></script>
+<script src="src/hooks/useInView.js"></script>
+<script src="src/hooks/useRailScroll.js"></script>
+<script src="src/hooks/useScrolled.js"></script>
+<script src="src/hooks/useSectionReveal.js"></script>
+
+<!-- Contenido de cada página -->
+<script src="src/data/about.js"></script>
+<script src="src/data/contact.js"></script>
+<script src="src/data/delivery.js"></script>
+<script src="src/data/distribution.js"></script>
+<script src="src/data/environmental.js"></script>
+<script src="src/data/home.js"></script>
+
+<!-- Átomos -->
+<script type="text/babel" src="src/components/atoms/AccentBar.jsx"></script>
+<script type="text/babel" src="src/components/atoms/BigLink.jsx"></script>
+<script type="text/babel" src="src/components/atoms/BodyText.jsx"></script>
+<script type="text/babel" src="src/components/atoms/CircleIconButton.jsx"></script>
+<script type="text/babel" src="src/components/atoms/Container.jsx"></script>
+<script type="text/babel" src="src/components/atoms/CountUp.jsx"></script>
+<script type="text/babel" src="src/components/atoms/CoverImage.jsx"></script>
+<script type="text/babel" src="src/components/atoms/Heading.jsx"></script>
+<script type="text/babel" src="src/components/atoms/IconChip.jsx"></script>
+<script type="text/babel" src="src/components/atoms/MoreLink.jsx"></script>
+<script type="text/babel" src="src/components/atoms/Overlay.jsx"></script>
+<script type="text/babel" src="src/components/atoms/Photo.jsx"></script>
+<script type="text/babel" src="src/components/atoms/Reveal.jsx"></script>
+<script type="text/babel" src="src/components/atoms/SectionTitle.jsx"></script>
+<script type="text/babel" src="src/components/atoms/TextLink.jsx"></script>
+<script type="text/babel" src="src/components/atoms/TiltCard.jsx"></script>
+
+<!-- Moléculas -->
+<script type="text/babel" src="src/components/molecules/BrandLockup.jsx"></script>
+<script type="text/babel" src="src/components/molecules/BulletList.jsx"></script>
+<script type="text/babel" src="src/components/molecules/CarouselControls.jsx"></script>
+<script type="text/babel" src="src/components/molecules/CertificationsPanel.jsx"></script>
+<script type="text/babel" src="src/components/molecules/ContactDetail.jsx"></script>
+<script type="text/babel" src="src/components/molecules/CtaButtons.jsx"></script>
+<script type="text/babel" src="src/components/molecules/DesktopNav.jsx"></script>
+<script type="text/babel" src="src/components/molecules/FormConfirmation.jsx"></script>
+<script type="text/babel" src="src/components/molecules/FormField.jsx"></script>
+<script type="text/babel" src="src/components/molecules/HeroStatsVisual.jsx"></script>
+<script type="text/babel" src="src/components/molecules/HighlightServiceCard.jsx"></script>
+<script type="text/babel" src="src/components/molecules/MobileMenu.jsx"></script>
+<script type="text/babel" src="src/components/molecules/NumberedStep.jsx"></script>
+<script type="text/babel" src="src/components/molecules/PhotoCollage.jsx"></script>
+<script type="text/babel" src="src/components/molecules/PillarCard.jsx"></script>
+<script type="text/babel" src="src/components/molecules/QuoteBlock.jsx"></script>
+<script type="text/babel" src="src/components/molecules/RelatedCard.jsx"></script>
+<script type="text/babel" src="src/components/molecules/ServiceCard.jsx"></script>
+<script type="text/babel" src="src/components/molecules/SlideTab.jsx"></script>
+<script type="text/babel" src="src/components/molecules/StatTile.jsx"></script>
+<script type="text/babel" src="src/components/molecules/TimelineStep.jsx"></script>
+
+<!-- Organismos -->
+<script type="text/babel" src="src/components/organisms/layout/SiteFooter.jsx"></script>
+<script type="text/babel" src="src/components/organisms/layout/SiteHeader.jsx"></script>
+<script type="text/babel" src="src/components/organisms/shared/CertificationsSection.jsx"></script>
+<script type="text/babel" src="src/components/organisms/shared/ClosingCta.jsx"></script>
+<script type="text/babel" src="src/components/organisms/shared/EcdTimeline.jsx"></script>
+<script type="text/babel" src="src/components/organisms/shared/PageHero.jsx"></script>
+<script type="text/babel" src="src/components/organisms/shared/QuoteCarousel.jsx"></script>
+<script type="text/babel" src="src/components/organisms/shared/RelatedSection.jsx"></script>
+<script type="text/babel" src="src/components/organisms/shared/ServicesRail.jsx"></script>
+<script type="text/babel" src="src/components/organisms/home/CaseStudy.jsx"></script>
+<script type="text/babel" src="src/components/organisms/home/EcdFeature.jsx"></script>
+<script type="text/babel" src="src/components/organisms/home/HomeCertifications.jsx"></script>
+<script type="text/babel" src="src/components/organisms/home/HomeHero.jsx"></script>
+<script type="text/babel" src="src/components/organisms/home/HomePillars.jsx"></script>
+<script type="text/babel" src="src/components/organisms/home/ProofSplit.jsx"></script>
+<script type="text/babel" src="src/components/organisms/delivery/DeliveryWork.jsx"></script>
+<script type="text/babel" src="src/components/organisms/delivery/EcdHighlights.jsx"></script>
+<script type="text/babel" src="src/components/organisms/delivery/HowWeDeliver.jsx"></script>
+<script type="text/babel" src="src/components/organisms/environmental/EnvironmentalWork.jsx"></script>
+<script type="text/babel" src="src/components/organisms/environmental/Recommendations.jsx"></script>
+<script type="text/babel" src="src/components/organisms/distribution/DistributionHero.jsx"></script>
+<script type="text/babel" src="src/components/organisms/distribution/DistributionRelated.jsx"></script>
+<script type="text/babel" src="src/components/organisms/distribution/DistributionWork.jsx"></script>
+<script type="text/babel" src="src/components/organisms/about/AboutEcd.jsx"></script>
+<script type="text/babel" src="src/components/organisms/about/AboutHero.jsx"></script>
+<script type="text/babel" src="src/components/organisms/about/AboutNext.jsx"></script>
+<script type="text/babel" src="src/components/organisms/about/AboutScope.jsx"></script>
+<script type="text/babel" src="src/components/organisms/about/AboutWhy.jsx"></script>
+<script type="text/babel" src="src/components/organisms/about/AboutWork.jsx"></script>
+<script type="text/babel" src="src/components/organisms/about/DirectAccess.jsx"></script>
+<script type="text/babel" src="src/components/organisms/contact/ContactDetails.jsx"></script>
+<script type="text/babel" src="src/components/organisms/contact/ContactForm.jsx"></script>
+<script type="text/babel" src="src/components/organisms/contact/ContactHero.jsx"></script>
+<script type="text/babel" src="src/components/organisms/contact/ContactSteps.jsx"></script>
+<script type="text/babel" src="src/components/organisms/contact/ServiceLinks.jsx"></script>
+
+<!-- Plantillas -->
+<script type="text/babel" src="src/components/templates/PageTemplate.jsx"></script>
 
 <!-- Páginas -->
-<script type="text/babel" src="src/home-a.jsx"></script>      <!-- Home -->
-<script type="text/babel" src="src/env-v1.jsx"></script>      <!-- Environmental -->
-<script type="text/babel" src="src/dist-v1.jsx"></script>     <!-- Distribution Engineering -->
-<script type="text/babel" src="src/about-heroes.jsx"></script>
-<script type="text/babel" src="src/about.jsx"></script>       <!-- About -->
-<script type="text/babel" src="src/contact.jsx"></script>     <!-- Contact -->
+<script type="text/babel" src="src/pages/AboutPage.jsx"></script>
+<script type="text/babel" src="src/pages/ContactPage.jsx"></script>
+<script type="text/babel" src="src/pages/DeliveryEngineeringPage.jsx"></script>
+<script type="text/babel" src="src/pages/DistributionEngineeringPage.jsx"></script>
+<script type="text/babel" src="src/pages/EnvironmentalPage.jsx"></script>
+<script type="text/babel" src="src/pages/HomePage.jsx"></script>
 
-<script type="text/babel">
-// Rutas del sitio: #home, #delivery, #environmental, #distribution, #about, #contact
-const PAGES = {
-  home:         { title: 'T3 Consulting',                          C: HomeA },
-  delivery:     { title: 'Delivery Engineering | T3 Consulting',     C: V1 },
-  environmental:{ title: 'Environmental | T3 Consulting',            C: EnvPage },
-  distribution: { title: 'Distribution Engineering | T3 Consulting', C: DistV1 },
-  about:        { title: 'About | T3 Consulting',                    C: AboutPage },
-  contact:      { title: 'Contact | T3 Consulting',                  C: ContactA },
-};
-const currentRoute = () => { const k = location.hash.slice(1); return PAGES[k] ? k : 'home'; };
-const go = r => { if (location.hash.slice(1) === r) window.scrollTo(0, 0); else location.hash = r; };
-
-// Botones de llamada a la acción → Contact
-const CTA_TEXT = [DE.cta, DE.capCta, HM.cta];
-
-// Conecta botones y tarjetas del diseño (que no tienen href) con las páginas.
-document.addEventListener('click', e => {
-  const btn = e.target.closest('button, a');
-  if (btn && !btn.closest('form') && CTA_TEXT.some(t => btn.textContent.trim() === t)) { e.preventDefault(); go('contact'); return; }
-  const card = e.target.closest('[data-route]');
-  if (card) { e.preventDefault(); go(card.dataset.route); }
-});
-
-// Marca como enlazables las tarjetas cuyo título corresponde a una página (pilares del Home, "Related", etc.)
-function tagCards() {
-  document.querySelectorAll('.hm-pillar, .v6-card').forEach(el => {
-    const h = el.querySelector('h3'); const r = h && ROUTES[h.textContent.trim()];
-    if (r) el.dataset.route = r;
-  });
-}
-
-function Site() {
-  const [route, setRoute] = React.useState(currentRoute);
-  React.useEffect(() => {
-    const f = () => { setRoute(currentRoute()); window.scrollTo(0, 0); };
-    window.addEventListener('hashchange', f);
-    return () => window.removeEventListener('hashchange', f);
-  }, []);
-  React.useEffect(() => { document.title = PAGES[route].title; tagCards(); }, [route]);
-  const { C } = PAGES[route];
-  return <C key={route} />;
-}
-
-window.DE_STATIC = false;
-ReactDOM.createRoot(document.getElementById('root')).render(<Site />);
-</script>
+<!-- Enrutador y arranque -->
+<script type="text/babel" src="src/app.jsx"></script>
 </body>
 </html>

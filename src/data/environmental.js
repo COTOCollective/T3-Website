@@ -1,0 +1,27 @@
+// Contenido de la página Environmental (#environmental).
+const ENV = {
+  h1: 'Environmental Permitting and Compliance',
+  intro: ['T3 provides environmental permitting, stormwater compliance, environmental planning, and field support for infrastructure projects. Through our Environmentally Conscious Design (ECD) approach, we bring environmental and engineering considerations together early so potential constraints can be identified and addressed while projects still have flexibility to respond.', 'Our environmental and engineering professionals work directly with your team from early project planning and environmental review through permitting, construction, and close-out. We work within agency requirements, project standards, and review processes to develop practical solutions that support compliance while keeping project delivery in focus.'],
+  rec: { t: 'Recommendations You Can Implement', p: ['Every environmental recommendation T3 provides is developed with implementation in mind. We consider site conditions, permitting requirements, design constraints, and schedule implications together, then identify a practical path forward that supports the project’s overall goals.', 'Rather than simply identifying an environmental constraint, T3 works with the project team to determine how it can be addressed within the design and construction approach. Because our environmental and engineering professionals work together, potential issues can be evaluated alongside feasible solutions, helping the team make informed decisions and keep the project moving.'] },
+  ecd: {
+    t: 'Environmental and Engineering Review Together',
+    p: ['T3 applies Environmentally Conscious Design (ECD) early in the project lifecycle so environmental and permitting considerations can inform design decisions while there is still flexibility to respond.', 'Identifying potential constraints early supports proactive risk management and can reduce redesign, permitting delays, and schedule impacts later in the project.', 'When a constraint is identified during the 30 or 60 percent design stage, our environmental and engineering professionals can work together to evaluate the issue and incorporate appropriate design considerations before the project advances further.'],
+    steps: ['Early lifecycle', 'Proactive risk management', '30 · 60 percent design'],
+    link: 'Environmentally Conscious Design',
+    wp: 'Download the Environmentally Conscious Design white paper',
+  },
+  servicesTitle: 'Environmental Services',
+  services: [
+    { t: 'Environmental Planning', b: 'California Environmental Quality Act (CEQA) and National Environmental Policy Act (NEPA) environmental review and documentation, supporting projects from initial evaluation through agency review, comment response, and environmental clearance', src: 'p19' },
+    { t: 'Stormwater Compliance and NPDES Permitting', b: 'National Pollutant Discharge Elimination System (NPDES) permitting, Stormwater Pollution Prevention Plans (SWPPP), and inspection through construction, delivered by qualified stormwater professionals.', src: 'p07' },
+    { t: 'Water Resources Engineering', b: 'Hydrologic and hydraulic analysis and modeling, floodplain analysis, and low impact development design to support practical, resilient project solutions.', src: 'p03' },
+    { t: 'Construction Environmental Compliance', b: 'On-site environmental coordination and compliance support before and during construction, helping project teams understand and implement applicable permit requirements and environmental commitments in the field', src: 'p15' },
+    { t: 'Environmental Program Management', b: 'Environmental program management for complex, multi-site programs, establishing consistent processes for document control, compliance tracking, reporting, and coordination across the portfolio.', src: 'p09' },
+    { t: 'Sustainability and ESG Advisory', b: 'Practical sustainability strategies and ESG programs aligned with business objectives and reporting needs', src: 'p18' },
+  ],
+  workTitle: 'Delivered Environmental Work',
+  work: { t: 'Stormwater Risk Addressed Before Construction', p: ['T3 identified a potential stormwater compliance issue during preconstruction and worked with the appropriate parties to secure written documentation resolving the issue before field activities began.', 'By addressing the requirement early, T3 helped the contractor reduce compliance uncertainty and avoid a potential disruption during construction.'], q: 'This is T3’s approach to proactive risk management: identifying environmental and permitting issues early enough for the project team to address them before they affect field execution.', link: 'See our projects' },
+  lic: { t: 'Licensure and Certifications', lead: 'With engineers licensed in all 50 states and environmental professionals holding specialized industry certifications, T3 is equipped to support environmental and engineering needs nationwide.', p: 'We also maintain small business, women-owned, and other certifications that can support project-specific participation requirements.', p2: 'View our full list of licenses and certifications below.', link: 'Certifications' },
+  related: [{ k: 'Engineering', i: 'zap' }, { k: 'Project and Program Management', i: 'layers' }, { k: 'Our Approach', i: 'route' }],
+  close: { t: 'Talk to a Technical Professional', p: 'Discuss your project’s permitting requirements, agency coordination, and schedule directly with the technical professionals who will support the work' },
+};
