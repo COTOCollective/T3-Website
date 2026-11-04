@@ -1,23 +1,38 @@
 /**
- * Organismo: formulario de contacto. Al enviarlo muestra un mensaje de confirmación
- * (no se envía a ningún servidor).
+ * Organismo: formulario de contacto embebido desde GoHighLevel.
+ * El script de embed redimensiona el iframe según el contenido del formulario.
  */
+const GHL_FORM_SCRIPT = 'https://link.coto.services/js/form_embed.js';
+
 const ContactForm = () => {
-  const [sent, setSent] = React.useState(false);
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    setSent(true);
-  };
-
-  if (sent) return <FormConfirmation message={CT.confirm} onBack={() => setSent(false)} />;
+  React.useEffect(() => {
+    if (document.querySelector(`script[src="${GHL_FORM_SCRIPT}"]`)) return undefined;
+    const script = document.createElement('script');
+    script.src = GHL_FORM_SCRIPT;
+    script.async = true;
+    document.body.appendChild(script);
+    return undefined;
+  }, []);
 
   return (
-    <form className="de-stack ct-form" style={{ gap: 18 }} onSubmit={handleSubmit}>
-      {CT.fields.map(([label, type]) => <FormField key={label} label={label} type={type} />)}
-      <FormField label="Service area" type="select" options={CT.areas} />
-      <FormField label="Project details" type="textarea" rows={5} />
-      <Button type="submit" iconRight="arrow-right" style={{ alignSelf: 'flex-start', height: 48, marginTop: 6 }}>{CT.submit}</Button>
-    </form>
+    <iframe
+      src="https://link.coto.services/widget/form/bbrBt5Oss6Rx36pG6cmJ"
+      id="inline-bbrBt5Oss6Rx36pG6cmJ"
+      title="Send us your project details"
+      data-layout="{'id':'INLINE'}"
+      data-trigger-type="alwaysShow"
+      data-trigger-value=""
+      data-activation-type="alwaysActivated"
+      data-activation-value=""
+      data-deactivation-type="neverDeactivate"
+      data-deactivation-value=""
+      data-form-name="Form 0"
+      data-height="768"
+      data-layout-iframe-id="inline-bbrBt5Oss6Rx36pG6cmJ"
+      data-form-id="bbrBt5Oss6Rx36pG6cmJ"
+      data-cookie-consent="true"
+      data-cookie-consent-provider="auto"
+      style={{ width: '100%', height: 768, border: 'none', borderRadius: 8, display: 'block' }}
+    />
   );
 };
