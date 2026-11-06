@@ -12,7 +12,8 @@ const HomeCertifications = () => (
           <p style={{ margin: 0, font: '700 26px/34px var(--font-display)', color: '#fff' }}>{HM.cert1}</p>
           <BodyText onDark style={{ fontSize: 15, lineHeight: '24px', maxWidth: 720 }}>{HM.cert2}</BodyText>
           <div className="de-row" style={{ gap: 24, flexWrap: 'wrap', marginTop: 8 }}>
-            <MoreLink onDark>Certifications</MoreLink>
+            {/* HIDDEN: uncomment when the Certifications page exists. */}
+            {/* <MoreLink onDark>Certifications</MoreLink> */}
             <Button iconRight="arrow-right" style={{ height: 48 }}>{DE.capCta}</Button>
           </div>
         </div>

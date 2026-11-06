@@ -8,7 +8,8 @@ const CaseStudy = () => (
       <div className="de-stack" style={{ gap: 20, borderLeft: '2px solid var(--accent)', paddingLeft: 28 }}>
         <BodyText>{HM.case1}</BodyText>
         <BodyText>{HM.case2}</BodyText>
-        <MoreLink onDark style={MORE_LINK_ON_LIGHT}>{HM.caseLink}</MoreLink>
+        {/* HIDDEN: uncomment when the Projects and Case Studies page exists. */}
+        {/* <MoreLink onDark style={MORE_LINK_ON_LIGHT}>{HM.caseLink}</MoreLink> */}
       </div>
     </Container>
   </section>

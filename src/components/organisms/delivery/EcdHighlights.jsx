@@ -25,7 +25,8 @@ const EcdHighlights = () => {
           <div style={{ ...ECD_TILE, background: 'var(--t3-navy)', border: 'none', boxShadow: 'none' }}>
             <Icon name="git-merge" size={20} color="var(--accent)" />
             <p style={{ margin: 0, font: '700 22px/30px var(--font-display)', color: '#fff' }}>{sameFirm}</p>
-            <div style={{ marginTop: 'auto' }}><MoreLink onDark>{DE.ecd.link}</MoreLink></div>
+            {/* HIDDEN: uncomment when the Environmentally Conscious Design page exists. */}
+            {/* <div style={{ marginTop: 'auto' }}><MoreLink onDark>{DE.ecd.link}</MoreLink></div> */}
           </div>
         </div>
       </Container>

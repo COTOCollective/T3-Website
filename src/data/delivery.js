@@ -5,7 +5,7 @@ const DE = {
   lede: 'Substation, transmission, and distribution engineering from 12 kV through 500 kV.',
   intro: [
     'T3 Consulting, Inc. is an infrastructure engineering and environmental firm with engineers licensed in all 50 states. Our in-house team covers structural, civil, electrical, environmental, and geology disciplines.',
-    'For your power delivery project, T3 brings engineering and environmental review together through Environmentally Conscious Design™ (ECD). You work directly with the technical professionals responsible for your project, from conception through the last design submittal.',
+    'For your power delivery project, T3 brings engineering and environmental review together through Environmentally Conscious Design (ECD). You work directly with the technical professionals responsible for your project, from conception through the last design submittal.',
   ],
   cta: 'Talk to a Technical Professional',
   capCta: 'Request our Capability Statement',
@@ -43,7 +43,13 @@ const DE = {
     ],
   },
   lic: { t: 'Licensure and Certifications', lead: 'Engineers licensed in all 50 states and nationally capable.', p: 'We can help meet your project requirements for special licensing such as small business or women-owned and more in specific states. Click below for the full list of licenses and certifications.', link: 'Certifications' },
-  related: { t: 'Related Services', items: [{ k: 'Environmental', i: 'leaf' }, { k: 'Project and Program Management', i: 'layers' }] },
+  related: {
+    t: 'Related Services',
+    items: [
+      { k: 'Environmental', i: 'leaf' },
+      { k: 'Project and Program Management', i: 'layers', hideLearnMore: true }, // HIDDEN: remove hideLearnMore when the Project and Program Management page exists.
+    ],
+  },
   close: { t: 'Talk to a Technical Professional', p: 'Discuss your project requirements, applicable standards, and submittal schedule with the technical professional who would do the work.' },
   phone: '858-465-7132',
   email: 'info@t3consulting.us',

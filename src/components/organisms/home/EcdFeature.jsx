@@ -10,7 +10,8 @@ const EcdFeature = () => {
         <Reveal className="de-stack" style={{ gap: 24, maxWidth: 860 }}>
           <Heading size={44}>{HM.ecdT}</Heading>
           <p style={{ margin: 0, font: '600 24px/34px var(--font-display)', color: 'var(--t3-navy)', textWrap: 'pretty', maxWidth: 820 }}>{intro}</p>
-          <MoreLink onDark style={MORE_LINK_ON_LIGHT}>{HM.ecdLink}</MoreLink>
+          {/* HIDDEN: uncomment when the Environmentally Conscious Design page exists. */}
+          {/* <MoreLink onDark style={MORE_LINK_ON_LIGHT}>{HM.ecdLink}</MoreLink> */}
         </Reveal>
         <div className="de-grid de-g3" style={{ gap: '30px 30px' }}>
           {points.map((point, i) => (

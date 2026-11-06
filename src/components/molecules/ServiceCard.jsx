@@ -12,6 +12,8 @@ const ServiceCard = ({ title, image, paragraphs, bullets, linkLabel }) => (
     <Photo height={300} title={title} src={image} onClick={() => {}} />
     {paragraphs.map((p) => <BodyText key={p} style={{ fontSize: 15, lineHeight: '24px' }}>{p}</BodyText>)}
     <BulletList items={bullets} />
-    {linkLabel && <TextLink>{linkLabel}</TextLink>}
+    {/* HIDDEN: uncomment when the individual service pages exist
+        (Engineering Services and Environmental Services carousels). */}
+    {/* {linkLabel && <TextLink>{linkLabel}</TextLink>} */}
   </article>
 );

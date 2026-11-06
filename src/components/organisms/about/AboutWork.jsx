@@ -18,7 +18,8 @@ const AboutWork = () => (
           </Reveal>
         ))}
       </div>
-      <MoreLink onDark>{AB.work.link}</MoreLink>
+      {/* HIDDEN: uncomment when the Projects page exists. */}
+      {/* <MoreLink onDark>{AB.work.link}</MoreLink> */}
     </Container>
   </section>
 );

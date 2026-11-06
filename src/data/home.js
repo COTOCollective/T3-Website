@@ -4,12 +4,13 @@ const HM = {
   sub: 'For utilities, municipal, construction, and industrial clients. Direct-engineer access on every project.',
   lic: 'Engineers licensed in all 50 states.',
   cta: 'Talk to a Technical Professional',
+  // mirrored: flips the photo horizontally so the workers are not hidden behind the hero text.
   heroSlides: [
     { src: 'assets/photos/p12.jpg', label: 'Environmental' },
-    { src: 'assets/photos/g2.jpg', label: 'Sustainability' },
-    { src: 'assets/photos/g3.jpg', label: 'Engineering & Design' },
-    { src: 'assets/photos/g1.jpg', label: 'Program Management' },
-    { src: 'assets/photos/stakeholder.png', label: 'Stakeholder Engagement' },
+    { src: 'assets/photos/g2.jpg', label: 'Sustainability', mirrored: true },
+    { src: 'assets/photos/g3.jpg', label: 'Engineering & Design', mirrored: true },
+    { src: 'assets/photos/g1.jpg', label: 'Program Management', mirrored: true },
+    { src: 'assets/photos/stakeholder-r.png', label: 'Stakeholder Engagement' },
   ],
   pillarsT: 'What T3 Does',
   pillars: [
@@ -17,7 +18,7 @@ const HM = {
     { k: 'Environmental', b: 'Stormwater permitting and compliance, environmental review and permitting, Phase I Environmental Site Assessments, and sustainability advisory.', i: 'leaf' },
     { k: 'Project and Program Management', b: 'Scheduling, cost control, and risk analysis for capital programs, run on your program cadence.', i: 'layers' },
   ],
-  ecdT: 'Environmentally Conscious Design™',
+  ecdT: 'Environmentally Conscious Design',
   ecd: 'Environmentally Conscious Design (ECD) means the engineering and the environmental review happen together, from the first decision. T3 weighs route options, foundations, and structures against both sets of constraints before drawings begin. Environmental risk gets named early, while it is still a design choice, instead of late, when it is a schedule problem. Stakeholder engagement runs on the same early timeline, so the people who can hold a project up are brought in while the design can still change.',
   ecdIcons: ['route', 'shield-alert', 'users'],
   ecdLink: 'See How Environmentally Conscious Design Works',

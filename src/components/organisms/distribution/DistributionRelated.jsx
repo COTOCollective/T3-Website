@@ -8,8 +8,8 @@ const DistributionRelated = () => (
       <div className="de-grid dist-rel" style={{ gridTemplateColumns: 'repeat(4,minmax(0,1fr))', gap: '12px 20px', alignItems: 'stretch' }}>
         <div className="dr-e1" style={{ gridColumn: '1 / span 3' }}><Eyebrow>{DIST.related.group}</Eyebrow></div>
         <div className="dr-e2"><Eyebrow>Environmental</Eyebrow></div>
-        {DIST.related.items.map((item) => <RelatedCard key={item.k} icon={item.i} title={item.k} style={{ height: '100%' }} />)}
-        <div className="dr-env"><RelatedCard icon={DIST.related.env.i} title={DIST.related.env.k} style={{ height: '100%' }} /></div>
+        {DIST.related.items.map((item) => <RelatedCard key={item.k} icon={item.i} title={item.k} hideLink={item.hideLearnMore} style={{ height: '100%' }} />)}
+        <div className="dr-env"><RelatedCard icon={DIST.related.env.i} title={DIST.related.env.k} hideLink={DIST.related.env.hideLearnMore} style={{ height: '100%' }} /></div>
       </div>
     </Container>
   </section>

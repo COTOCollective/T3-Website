@@ -22,10 +22,15 @@ const CertificationsPanel = ({ lead, leadSize = 'lg', notes = [], linkLabel, sho
       <div className="de-stack" style={{ gap: 12, position: 'relative', flex: 1, minWidth: 260 }}>
         <p style={leadStyle}>{lead}</p>
         {notes.map((note) => <p key={note} style={{ margin: 0, font: '400 14px/22px var(--font-body)', color: 'var(--fg-on-inverse-2)', maxWidth: 720 }}>{note}</p>)}
-        <div className="de-row" style={{ gap: 24, flexWrap: 'wrap', marginTop: 8 }}>
-          <MoreLink onDark>{linkLabel}</MoreLink>
-          {showCapabilityCta && <Button iconRight="arrow-right" style={{ height: 48 }}>{DE.capCta}</Button>}
-        </div>
+        {/* HIDDEN: when the Certifications page exists, uncomment the MoreLink below and
+            remove the `showCapabilityCta &&` condition so the row always renders
+            (the About page shows only the link, so the row would be empty without it). */}
+        {showCapabilityCta && (
+          <div className="de-row" style={{ gap: 24, flexWrap: 'wrap', marginTop: 8 }}>
+            {/* <MoreLink onDark>{linkLabel}</MoreLink> */}
+            <Button iconRight="arrow-right" style={{ height: 48 }}>{DE.capCta}</Button>
+          </div>
+        )}
       </div>
     </div>
   );

@@ -21,7 +21,7 @@ const HomeHero = () => {
         <div style={{ position: 'absolute', inset: 0 }}>
           {slides.map((slide, k) => (
             <div key={slide.src} style={{ position: 'absolute', inset: 0, opacity: k === activeSlide ? 1 : 0, transition: 'opacity 1200ms var(--ease-out)' }}>
-              <CoverImage src={slide.src} />
+              <CoverImage src={slide.src} mirrored={slide.mirrored} />
             </div>
           ))}
         </div>

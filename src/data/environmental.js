@@ -22,6 +22,10 @@ const ENV = {
   workTitle: 'Delivered Environmental Work',
   work: { t: 'Stormwater Risk Addressed Before Construction', p: ['T3 identified a potential stormwater compliance issue during preconstruction and worked with the appropriate parties to secure written documentation resolving the issue before field activities began.', 'By addressing the requirement early, T3 helped the contractor reduce compliance uncertainty and avoid a potential disruption during construction.'], q: 'This is T3’s approach to proactive risk management: identifying environmental and permitting issues early enough for the project team to address them before they affect field execution.', link: 'See our projects' },
   lic: { t: 'Licensure and Certifications', lead: 'With engineers licensed in all 50 states and environmental professionals holding specialized industry certifications, T3 is equipped to support environmental and engineering needs nationwide.', p: 'We also maintain small business, women-owned, and other certifications that can support project-specific participation requirements.', p2: 'View our full list of licenses and certifications below.', link: 'Certifications' },
-  related: [{ k: 'Engineering', i: 'zap' }, { k: 'Project and Program Management', i: 'layers' }, { k: 'Our Approach', i: 'route' }],
+  related: [
+    { k: 'Engineering', i: 'zap' },
+    { k: 'Project and Program Management', i: 'layers', hideLearnMore: true }, // HIDDEN: remove hideLearnMore when the Project and Program Management page exists.
+    { k: 'Our Approach', i: 'route', hideLearnMore: true }, // HIDDEN: remove hideLearnMore when the Our Approach page exists.
+  ],
   close: { t: 'Talk to a Technical Professional', p: 'Discuss your project’s permitting requirements, agency coordination, and schedule directly with the technical professionals who will support the work' },
 };

@@ -11,7 +11,8 @@ const EnvironmentalWork = () => (
         <FrostedPanel padding={36} style={{ borderRadius: 16, display: 'flex', flexDirection: 'column', gap: 20 }}>
           <h3 className="de-h3 on-dark" style={{ fontSize: 24, lineHeight: '32px' }}>{ENV.work.t}</h3>
           {ENV.work.p.map((p) => <BodyText key={p} onDark>{p}</BodyText>)}
-          <MoreLink onDark>{ENV.work.link}</MoreLink>
+          {/* HIDDEN: uncomment when the Projects page exists. */}
+          {/* <MoreLink onDark>{ENV.work.link}</MoreLink> */}
         </FrostedPanel>
         <div className="de-stack" style={{ gap: 24, justifyContent: 'flex-end' }}>
           <p className="env-q" style={{ margin: 0, font: '500 26px/38px var(--font-display)', color: '#fff', textWrap: 'pretty' }}>{ENV.work.q}</p>

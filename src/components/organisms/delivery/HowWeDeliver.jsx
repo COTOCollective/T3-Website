@@ -12,7 +12,8 @@ const HowWeDeliver = () => (
               <div key={item.t} className="de-stack" style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
                 <h3 className="de-h3">{item.t}</h3>
                 {item.p.map((p) => <BodyText key={p}>{p}</BodyText>)}
-                {item.link && <MoreLink onDark style={MORE_LINK_ON_LIGHT}>{item.link}</MoreLink>}
+                {/* HIDDEN: uncomment when the strategic undergrounding case study page exists. */}
+                {/* {item.link && <MoreLink onDark style={MORE_LINK_ON_LIGHT}>{item.link}</MoreLink>} */}
               </div>
             ))}
           </div>

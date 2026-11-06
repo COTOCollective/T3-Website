@@ -16,7 +16,8 @@ const DeliveryWork = () => {
             <div className="de-stack" style={{ padding: 32, gap: 20 }}>
               <h3 className="de-h3 on-dark" style={{ fontSize: 24, lineHeight: '32px' }}>{featured.t}</h3>
               {featured.p.map((p, i) => <BodyText key={i} onDark>{p}</BodyText>)}
-              <MoreLink onDark>{featured.link}</MoreLink>
+              {/* HIDDEN: uncomment when the strategic undergrounding case study page exists. */}
+              {/* <MoreLink onDark>{featured.link}</MoreLink> */}
             </div>
           </Card>
           <div className="de-stack" style={{ gap: 24 }}>

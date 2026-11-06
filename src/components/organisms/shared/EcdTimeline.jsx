@@ -30,7 +30,8 @@ const EcdTimeline = ({ title, labels, paragraphs, link, whitePaper, compact }) =
         ))}
       </div>
       <div className="de-row" style={{ gap: 24, flexWrap: 'wrap' }}>
-        <MoreLink onDark>{link}</MoreLink>
+        {/* HIDDEN: uncomment when the Environmentally Conscious Design page exists. */}
+        {/* <MoreLink onDark>{link}</MoreLink> */}
         <Button variant="secondary" onDark iconRight="download" style={{ height: 48 }} onClick={downloadWhitePaper}>{whitePaper}</Button>
       </div>
     </Container>

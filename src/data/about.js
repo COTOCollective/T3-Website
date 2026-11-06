@@ -10,6 +10,17 @@ const AB = {
   lic: { t: 'Licensure and Certifications', p: ['With engineers licensed in all 50 states and environmental professionals holding specialized industry certifications, T3 is equipped to support environmental and engineering needs nationwide.', 'We also maintain small business, women-owned, and other certifications that can support project-specific participation requirements.', 'Our technical professionals work remotely, so coverage follows the project rather than an office location.'], p2: 'View our full list of licenses and certifications below.', link: 'Certifications' },
   work: { t: 'Delivered Work', items: [{ t: 'Strategic Undergrounding Program', p: ['T3 supported a leading Southern California utility on a 14-mile strategic undergrounding program delivered across two projects. T3 helped accelerate one circuit by approximately seven months, supporting the utility in meeting its annual undergrounding mileage target.'], note: 'Program results reflect the specific scope and site conditions of that project.' }, { t: 'Quality Control Assignments', p: ['T3 was selected for four quality control assignments within three months to review distribution designs produced by a major utility client’s internal team.'] }], link: 'Projects' },
   next: { t: 'Where the Firm Is Going', items: [['More direct work.', 'Expanding direct contracts with utilities, municipalities, and industry.'], ['Fewer, deeper partnerships.', 'Long-term programs with a small number of strong partners rather than one-off projects.'], ['Wider reach.', 'Minority- and Women-Owned Business Enterprise (MWBE) certification in New York, alongside the firm’s California certifications, expands where T3 can be engaged.']] },
-  related: { t: 'Related Pages', items: [{ k: 'Core Values', i: 'compass' }, { k: 'Leadership', i: 'users' }, { k: 'Certifications', i: 'badge-check' }, { k: 'Projects', i: 'folder-open' }, { k: 'Engineering', i: 'zap' }, { k: 'Environmental', i: 'leaf' }] },
+  // HIDDEN: remove each hideLearnMore when you want that card's "Learn more" link back.
+  related: {
+    t: 'Related Pages',
+    items: [
+      { k: 'Core Values', i: 'compass', hideLearnMore: true },
+      { k: 'Leadership', i: 'users', hideLearnMore: true },
+      { k: 'Certifications', i: 'badge-check', hideLearnMore: true },
+      { k: 'Projects', i: 'folder-open', hideLearnMore: true },
+      { k: 'Engineering', i: 'zap', hideLearnMore: true },
+      { k: 'Environmental', i: 'leaf', hideLearnMore: true },
+    ],
+  },
   close: { t: 'Talk to a Technical Professional', p: 'Discuss your project, requirements, and schedule directly with the technical professionals who will support the work.' },
 };

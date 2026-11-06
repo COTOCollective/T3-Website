@@ -27,6 +27,15 @@ const DIST = {
     wp: 'Download the Environmentally Conscious Design white paper',
   },
   lic: { t: 'Licensure and Certifications', lead: 'T3 brings engineering licensure across all 50 states together with specialized technical and business certifications, giving our team the qualifications to support distribution programs nationwide.', p: 'We also maintain small business, women-owned, and other state and agency-specific certifications that can help support project participation and contracting requirements. View our full list of professional licenses and certifications below.', link: 'Certifications' },
-  related: { group: 'Engineering', items: [{ k: 'Substation Engineering', i: 'zap' }, { k: 'Transmission Engineering', i: 'utility-pole' }, { k: 'Grid Hardening', i: 'shield-check' }], env: { k: 'Construction Environmental Compliance', i: 'leaf' } },
+  // HIDDEN: remove each hideLearnMore when that service page exists.
+  related: {
+    group: 'Engineering',
+    items: [
+      { k: 'Substation Engineering', i: 'zap', hideLearnMore: true },
+      { k: 'Transmission Engineering', i: 'utility-pole', hideLearnMore: true },
+      { k: 'Grid Hardening', i: 'shield-check', hideLearnMore: true },
+    ],
+    env: { k: 'Construction Environmental Compliance', i: 'leaf', hideLearnMore: true },
+  },
   close: { t: 'Talk to a Technical Professional', p: 'Discuss your distribution project, utility standards, and submittal requirements directly with the technical professionals who will support the work. From the first conversation through design and review, you have direct access to the engineers responsible for your project.' },
 };

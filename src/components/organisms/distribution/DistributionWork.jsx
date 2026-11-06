@@ -15,7 +15,8 @@ const DistributionWork = () => {
           <div style={cardStyle({ gridColumn: 'span 8' })}>
             <h3 className="de-h3" style={{ fontSize: 24, lineHeight: '32px' }}>{program.t}</h3>
             {program.p.map((p) => <BodyText key={p}>{p}</BodyText>)}
-            <TextLink>{DIST.caseLink}</TextLink>
+            {/* HIDDEN: uncomment when the strategic undergrounding case study page exists. */}
+            {/* <TextLink>{DIST.caseLink}</TextLink> */}
           </div>
           <div style={cardStyle({ gridColumn: 'span 4' })}>
             <div style={{ font: '500 40px/44px var(--font-mono)', color: 'var(--t3-turq-700)' }}>4 · 3</div>
